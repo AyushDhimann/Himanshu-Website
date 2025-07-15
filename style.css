@@ -1,0 +1,90 @@
+/* We're using a subtle, animated gradient for the background */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(-45deg, #d4e1f5, #f5d4e1, #e0e5ec, #d4f5e1);
+    background-size: 400% 400%;
+    animation: animateGradient 20s ease infinite;
+}
+
+/* This is the animation that makes the background colors move */
+@keyframes animateGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Style for the main title */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.9),
+                 -1px -1px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+/* --- The CSS Grid Container --- */
+.garage-grid {
+    column-count: 3;
+    column-gap: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.car-card {
+    display: inline-block;
+    max-width: 100%;
+    box-sizing: border-box;
+    background: rgba(224, 229, 236, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 12px 12px 24px rgba(163, 177, 198, 0.7),
+                -12px -12px 24px rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 25px;
+    transition: all 0.3s ease-in-out;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.car-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 20px 20px 30px rgba(163, 177, 198, 0.8),
+                -20px -20px 30px rgba(255, 255, 255, 0.7);
+}
+
+.car-card img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+}
+
+.car-card h2 {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.car-card p {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    color: #3d4a58;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+    .garage-grid {
+        column-count: 2;
+    }
+}
+@media (max-width: 600px) {
+    .garage-grid {
+        column-count: 1;
+    }
+}
