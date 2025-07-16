@@ -82,6 +82,28 @@ h1 {
     color: #3d4a58;
 }
 
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.site-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+    vertical-align: middle;
+}
+
+.site-icon-top-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 900px) {
     .garage-grid {
