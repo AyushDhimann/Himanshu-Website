@@ -1,18 +1,23 @@
-/* We're using a subtle, animated gradient for the background */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     color: #333;
     text-align: center;
     padding: 20px;
-    background: linear-gradient(-45deg, #d4e1f5, #f5d4e1, #e0e5ec, #d4f5e1);
+    background: linear-gradient(-45deg, #e8b0b0, rgba(193, 193, 255, 0.7), #ecb5b5, #b1b1f1, #f5e1f8, #e1d4f8);
     background-size: 400% 400%;
-    animation: animateGradient 20s ease infinite;
+    animation: animateGradient 7s ease infinite;
 }
 
 /* This is the animation that makes the background colors move */
 @keyframes animateGradient {
     0% { background-position: 0% 50%; }
+    25% { background-position: 50% 100%; }
     50% { background-position: 100% 50%; }
+    75% { background-position: 50% 0%; }
     100% { background-position: 0% 50%; }
 }
 
