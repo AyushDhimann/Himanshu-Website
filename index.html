@@ -3,253 +3,839 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Himanshu's Dream Car Garage</title>
+    <title>Ultimate Garage | Himanshu Dhiman</title>
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-    <img src="images/icon.png" alt="Site Icon" class="site-icon site-icon-top-left">
-    <h1>Dream Car Garage</h1>
-
-    <div class="garage-grid">
-
-        <!-- Card for the Lamborghini -->
-        <div class="car-card">
-            <img src="images/huracan_sto_og.webp" alt="A yellow Lamborghini Huracan">
-            <h2>Lamborghini Huracán STO</h2>
-            <p>
-                The Lamborghini Huracán STO is a high-performance, track-focused supercar with a naturally aspirated V10 engine.<br>
-                <strong>Horsepower:</strong> 630 hp<br>
-                <strong>Top Speed:</strong> 193 mph (310 km/h)
-            </p>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">HIMANSHU</div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
         </div>
+    </div>
 
-        <!-- Card for the Bugatti -->
-        <div class="car-card">
-            <img src="images/bugatti-chiron-cgi-artwork-4k_1618920195.jpg.webp" alt="A blue Bugatti Chiron">
-            <h2>Bugatti Chiron</h2>
-            <p>
-                The Bugatti Chiron is a quad-turbocharged hypercar that represents the peak of automotive speed and luxury.<br>
-                <strong>Horsepower:</strong> 1,479 hp<br>
-                <strong>Top Speed:</strong> 261 mph (420 km/h)
-            </p>
-        </div>
+    <div class="noise-overlay"></div>
+    
+    <!-- Animated background orbs -->
+    <div class="ambient-background">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
 
-        <!-- Card for the Porsche -->
-        <div class="car-card">
-            <img src="images/porshe 911.jpg" alt="A silver Porsche 911">
-            <h2>Porsche 911 GT3 R</h2>
-            <p>
-                The Porsche 911 GT3 R is a track-focused racing machine, designed for endurance and GT racing with advanced aerodynamics and a powerful flat-six engine.<br>
-                <strong>Horsepower:</strong> 565 hp<br>
-                <strong>Top Speed:</strong> 186 mph (299 km/h)
-            </p>
-        </div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
 
-        <!-- Card for the Brabus 900 Rocket Edition -->
-        <div class="car-card">
-            <img src="images/2021-Brabus-900-Rocket-Edition-006-2160.jpg" alt="2021 Brabus 900 Rocket Edition">
-            <h2>2021 Brabus 900 Rocket Edition</h2>
-            <p>
-                The Brabus 900 Rocket Edition is a high-performance, heavily tuned luxury sedan based on the Mercedes-AMG platform.<br>
-                <strong>Horsepower:</strong> 900 hp<br>
-                <strong>Top Speed:</strong> 205 mph (330 km/h)
-            </p>
-        </div>
+    <!-- Navigation / Header -->
+        <nav class="main-nav">
+        <a href="#" class="nav-link active" data-filter="all">All</a>
+        <a href="#" class="nav-link" data-filter="supercar">Supercars</a>
+        <a href="#" class="nav-link" data-filter="hypercar">Hypercars</a>
+        <a href="#" class="nav-link" data-filter="suv-luxury">SUVs & Luxury</a>
+        <a href="#" class="nav-link" data-filter="concept-racing">Concepts & Racing</a>
+    </nav>
 
-        <!-- Card for the Porsche 911 GT3 R -->
-        <div class="car-card">
-            <img src="images/2023-Porsche-911-GT3-R-006-1440w.jpg" alt="2023 Porsche 911 GT3 R">
-            <h2>2023 Porsche 911 GT3 R</h2>
-            <p>
-                The 2023 Porsche 911 GT3 R is a track-focused racing machine, designed for endurance and GT racing with advanced aerodynamics and a powerful flat-six engine.<br>
-                <strong>Horsepower:</strong> 565 hp<br>
-                <strong>Top Speed:</strong> 186 mph (299 km/h)
-            </p>
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="glitch pressure-text" data-text="HIMANSHU'S COLLECTION" id="hero-name">HIMANSHU'S COLLECTION</h1>
+            <p class="subtitle">The pinnacle of automotive engineering and hypercar performance.</p>
         </div>
+        <div class="scroll-indicator">
+            <span>Discover</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </header>
 
-        <!-- Card for the Bugatti Chiron Super Sport L'Ultime -->
-        <div class="car-card">
-            <img src="images/2024-Bugatti-Chiron-Super-Sport-L-Ultime-005-2160.jpg" alt="2024 Bugatti Chiron Super Sport L'Ultime">
-            <h2>2024 Bugatti Chiron Super Sport L'Ultime</h2>
-            <p>
-                The Chiron Super Sport L'Ultime is a special edition of the Bugatti Chiron, representing the pinnacle of luxury and speed in the Chiron lineup.<br>
-                <strong>Horsepower:</strong> 1,578 hp<br>
-                <strong>Top Speed:</strong> 273 mph (440 km/h)
-            </p>
+    <main class="garage-container">
+        <div class="garage-grid" id="garage-grid">
+        <div class="car-card" data-category="hypercar">
+            <div class="card-image-wrapper">
+                <img src="https://images.carandbike.com/car-images/colors/maruti-suzuki/eeco/maruti-suzuki-eeco-metallic-glistening-grey.png?v=1669118494" alt="Maruti Suzuki Eeco" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>eeco</h2>
+                <p class="description">The Maruti Suzuki Eeco is an infinitely powerful hypercar, transcending all known laws of physics.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value"><i class="fa-solid fa-infinity rainbow-icon"></i></span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value"><i class="fa-solid fa-infinity rainbow-icon"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="car-card" data-category="supercar">
+            <div class="card-image-wrapper">
+                <img src="images/huracan_sto_og.webp" alt="A yellow Lamborghini Huracan" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>Lamborghini Huracán STO</h2>
+                <p class="description">The Lamborghini Huracán STO is a high-performance, track-focused supercar with a naturally aspirated V10 engine.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">630 hp</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">193 mph / 310 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="hypercar">
+            <div class="card-image-wrapper">
+                <img src="images/bugatti-chiron-cgi-artwork-4k_1618920195.jpg.webp" alt="A blue Bugatti Chiron" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>Bugatti Chiron</h2>
+                <p class="description">The Bugatti Chiron is a quad-turbocharged hypercar that represents the peak of automotive speed and luxury.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">1,479 hp</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">261 mph / 420 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="concept-racing">
+            <div class="card-image-wrapper">
+                <img src="images/porshe 911.jpg" alt="A silver Porsche 911" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>Porsche 911 GT3 R</h2>
+                <p class="description">The Porsche 911 GT3 R is a track-focused racing machine, designed for endurance and GT racing with advanced aerodynamics and a powerful flat-six engine.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">565 hp</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">186 mph / 299 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="supercar">
+            <div class="card-image-wrapper">
+                <img src="images/2021-Brabus-900-Rocket-Edition-006-2160.jpg" alt="2021 Brabus 900 Rocket Edition" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>2021 Brabus 900 Rocket Edition</h2>
+                <p class="description">The Brabus 900 Rocket Edition is a high-performance, heavily tuned luxury sedan based on the Mercedes-AMG platform.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">900 hp</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">205 mph / 330 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="concept-racing">
+            <div class="card-image-wrapper">
+                <img src="images/2023-Porsche-911-GT3-R-006-1440w.jpg" alt="2023 Porsche 911 GT3 R" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>2023 Porsche 911 GT3 R</h2>
+                <p class="description">The 2023 Porsche 911 GT3 R is a track-focused racing machine, designed for endurance and GT racing with advanced aerodynamics and a powerful flat-six engine.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">565 hp</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">186 mph / 299 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="hypercar">
+            <div class="card-image-wrapper">
+                <img src="images/2024-Bugatti-Chiron-Super-Sport-L-Ultime-005-2160.jpg" alt="2024 Bugatti Chiron Super Sport L'Ultime" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>2024 Bugatti Chiron Super Sport L'Ultime</h2>
+                <p class="description">The Chiron Super Sport L'Ultime is a special edition of the Bugatti Chiron, representing the pinnacle of luxury and speed in the Chiron lineup.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">1,578 hp</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">273 mph / 440 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="concept-racing">
+            <div class="card-image-wrapper">
+                <img src="images/2025-Ferrari-499P-001-1440w.jpg" alt="2025 Ferrari 499P" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>2025 Ferrari 499P</h2>
+                <p class="description">The Ferrari 499P is a cutting-edge Le Mans Hypercar, marking Ferrari's return to top-level endurance racing with hybrid technology.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">680 hp (hybrid system)</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">211 mph / 340 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="supercar">
+            <div class="card-image-wrapper">
+                <img src="images/2023-Audi-R8-Coupe-V10-GT-RWD-001-1440w.jpg" alt="2023 Audi R8 Coupe V10 GT RWD" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>2023 Audi R8 Coupe V10 GT RWD</h2>
+                <p class="description">The 2023 Audi R8 Coupe V10 GT RWD is a limited-edition, rear-wheel-drive supercar with a naturally aspirated V10 engine and sharp handling.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">620 hp</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">199 mph / 320 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="concept-racing">
+            <div class="card-image-wrapper">
+                <img src="images/2023-BMW-M4-GT4-001-1440w.jpg" alt="2023 BMW M4 GT4" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>2023 BMW M4 GT4</h2>
+                <p class="description">The BMW M4 GT4 is a customer racing car designed for GT4 competition, blending BMW's motorsport heritage with modern technology.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">Up to 550 hp</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">170 mph / 274 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="hypercar">
+            <div class="card-image-wrapper">
+                <img src="images/2026-Aston-Martin-Valkyrie-LM-004-1440w.jpg" alt="2026 Aston Martin Valkyrie LM" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>2026 Aston Martin Valkyrie LM</h2>
+                <p class="description">The Valkyrie LM is Aston Martin's hypercar engineered for Le Mans, featuring extreme aerodynamics and a high-revving V12 engine.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">697 hp</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">211 mph / 340 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="hypercar">
+            <div class="card-image-wrapper">
+                <img src="images/2021-Pagani-Imola-004-2160.jpg" alt="2021 Pagani Imola" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>2021 Pagani Imola</h2>
+                <p class="description">The Pagani Imola is a limited-edition hypercar focused on track performance, with advanced aerodynamics and a powerful V12 engine.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">827 hp</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">238 mph / 383 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="hypercar">
+            <div class="card-image-wrapper">
+                <img src="images/ferrari sf90.jpg" alt="Ferrari SF90 XX Stradale" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>Ferrari SF90 XX Stradale</h2>
+                <p class="description">The Ferrari SF90 XX Stradale is a limited-series, track-focused hybrid supercar with advanced aerodynamics and electrified V8 power.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">1,030 hp (hybrid system)</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">211 mph / 340 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="hypercar">
+            <div class="card-image-wrapper">
+                <img src="images/2018-Aston-Martin-Vulcan-AMR-Pro-006-2000.jpg" alt="2018 Aston Martin Vulcan AMR Pro" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>2018 Aston Martin Vulcan AMR Pro</h2>
+                <p class="description">A track-only supercar with extreme aerodynamics and performance.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">820 hp</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">208 mph / 335 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="suv-luxury">
+            <div class="card-image-wrapper">
+                <img src="images/2022-GMC-Hummer-EV-007-1440w.jpg" alt="2022 GMC Hummer EV" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>2022 GMC Hummer EV</h2>
+                <p class="description">An all-electric supertruck with impressive off-road and on-road capabilities.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">Up to 1,000 hp</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">106 mph / 170 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="suv-luxury">
+            <div class="card-image-wrapper">
+                <img src="images/2025-Land-Rover-Defender-Octa-003-1440w.jpg" alt="2025 Land Rover Defender Octa" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>2025 Land Rover Defender Octa</h2>
+                <p class="description">The next-generation Defender with advanced off-road technology.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">626 hp</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">155 mph / 250 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="suv-luxury">
+            <div class="card-image-wrapper">
+                <img src="images/2025-Mercedes-AMG-GT63-S-E-Performance-4-Door-001-1440w.jpg" alt="2025 Mercedes-AMG GT63 S E Performance 4-Door" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>2025 Mercedes-AMG GT63 S E Performance 4-Door</h2>
+                <p class="description">A high-performance hybrid luxury sedan with AMG engineering.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">805 hp (combined)</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">199 mph / 320 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="supercar">
+            <div class="card-image-wrapper">
+                <img src="images/2025-Ford-Mustang-GTD-Spirit-of-America-003-2160.jpg" alt="2025 Ford Mustang GTD Spirit of America" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>2025 Ford Mustang GTD Spirit of America</h2>
+                <p class="description">A special edition Mustang with track-focused performance.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">815 hp</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">202 mph / 325 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="suv-luxury">
+            <div class="card-image-wrapper">
+                <img src="images/2023-Cadillac-Escalade-V-002-2160.jpg" alt="2023 Cadillac Escalade V" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>2023 Cadillac Escalade V</h2>
+                <p class="description">A luxury SUV with supercharged V8 power and premium features.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">682 hp</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">125 mph / 201 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="suv-luxury">
+            <div class="card-image-wrapper">
+                <img src="images/2022-Rolls-Royce-Ghost-Black-Badge-002-2160.jpg" alt="2022 Rolls-Royce Ghost Black Badge" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>2022 Rolls-Royce Ghost Black Badge</h2>
+                <p class="description">The Black Badge edition of the Ghost, offering extra power and bespoke luxury.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">592 hp</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">155 mph / 250 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="supercar">
+            <div class="card-image-wrapper">
+                <img src="images/2025-Maserati-GT2-Stradale-004-1440w.jpg" alt="2025 Maserati GT2 Stradale" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>2025 Maserati GT2 Stradale</h2>
+                <p class="description">Maserati's latest GT2 race car for the road.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">631 hp</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">201 mph / 323 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="concept-racing">
+            <div class="card-image-wrapper">
+                <img src="https://www.wsupercars.com/wallpapers-regular/Ferrari/2025-Ferrari-F76-Concept-004-2160.jpg" alt="2025 Ferrari F76 Concept" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>2025 Ferrari F76 Concept</h2>
+                <p class="description">The Ferrari F76 Concept is a futuristic supercar concept blending advanced aerodynamics, hybrid powertrain, and cutting-edge design.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">1,000 hp (hybrid system)</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">220 mph / 354 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="car-card" data-category="concept-racing">
+            <div class="card-image-wrapper">
+                <img src="https://www.wsupercars.com/wallpapers-regular/Formula-1/Red-Bull-Racing/2025-Formula1-Red-Bull-Racing-RB21-010-2160.jpg" alt="2025 Red Bull Racing RB21 Formula 1 car" loading="lazy">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h2>2025 Red Bull Racing RB21</h2>
+                <p class="description">The RB21 is Red Bull Racing's 2025 Formula 1 contender, engineered for maximum performance in the world's premier motorsport series.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Horsepower</span>
+                            <span class="stat-value">~1,040 hp</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fa-solid fa-bolt"></i>
+                        <div class="stat-info">
+                            <span class="stat-label">Top Speed</span>
+                            <span class="stat-value">223 mph / 360 km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
 
-        <!-- Card for the Ferrari 499P -->
-        <div class="car-card">
-            <img src="images/2025-Ferrari-499P-001-1440w.jpg" alt="2025 Ferrari 499P">
-            <h2>2025 Ferrari 499P</h2>
-            <p>
-                The Ferrari 499P is a cutting-edge Le Mans Hypercar, marking Ferrari's return to top-level endurance racing with hybrid technology.<br>
-                <strong>Horsepower:</strong> 680 hp (hybrid system)<br>
-                <strong>Top Speed:</strong> 211 mph (340 km/h)
-            </p>
-        </div>
+    <script>
+        // Preloader Logic
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            // Ensure preloader stays for a minimal feel
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+                // Remove from DOM after fade out
+                setTimeout(() => preloader.remove(), 800);
+            }, 3500); // 3.5s + 0.5s fade out = 4s total
+        });
 
-        <!-- Card for the Formula 1 Red Bull Racing RB21 -->
-        <div class="car-card">
-            <img src="images/2025-Formula1-Red-Bull-Racing-RB21-006-2160.jpg" alt="2025 Red Bull Racing RB21 Formula 1 car">
-            <h2>2025 Red Bull Racing RB21</h2>
-            <p>
-                The RB21 is Red Bull Racing's 2025 Formula 1 contender, engineered for maximum performance in the world's premier motorsport series.<br>
-                <strong>Horsepower:</strong> ~1,040 hp<br>
-                <strong>Top Speed:</strong> 223 mph (360 km/h) (F1 race trim)
-            </p>
-        </div>
+        // Custom Cursor Logic
+        const cursorDot = document.querySelector("[data-cursor-dot]");
+        const cursorOutline = document.querySelector("[data-cursor-outline]");
 
-        <!-- Card for the Audi R8 Coupe V10 GT RWD -->
-        <div class="car-card">
-            <img src="images/2023-Audi-R8-Coupe-V10-GT-RWD-001-1440w.jpg" alt="2023 Audi R8 Coupe V10 GT RWD">
-            <h2>2023 Audi R8 Coupe V10 GT RWD</h2>
-            <p>
-                The 2023 Audi R8 Coupe V10 GT RWD is a limited-edition, rear-wheel-drive supercar with a naturally aspirated V10 engine and sharp handling.<br>
-                <strong>Horsepower:</strong> 620 hp<br>
-                <strong>Top Speed:</strong> 199 mph (320 km/h)
-            </p>
-        </div>
+        window.addEventListener("mousemove", function (e) {
+            const posX = e.clientX;
+            const posY = e.clientY;
 
-        <!-- Card for the BMW M4 GT4 -->
-        <div class="car-card">
-            <img src="images/2023-BMW-M4-GT4-001-1440w.jpg" alt="2023 BMW M4 GT4">
-            <h2>2023 BMW M4 GT4</h2>
-            <p>
-                The BMW M4 GT4 is a customer racing car designed for GT4 competition, blending BMW's motorsport heritage with modern technology.<br>
-                <strong>Horsepower:</strong> Up to 550 hp<br>
-                <strong>Top Speed:</strong> 170 mph (274 km/h)
-            </p>
-        </div>
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
 
-        <!-- Card for the Aston Martin Valkyrie LM -->
-        <div class="car-card">
-            <img src="images/2026-Aston-Martin-Valkyrie-LM-004-1440w.jpg" alt="2026 Aston Martin Valkyrie LM">
-            <h2>2026 Aston Martin Valkyrie LM</h2>
-            <p>
-                The Valkyrie LM is Aston Martin's hypercar engineered for Le Mans, featuring extreme aerodynamics and a high-revving V12 engine.<br>
-                <strong>Horsepower:</strong> 697 hp<br>
-                <strong>Top Speed:</strong> 211 mph (340 km/h)
-            </p>
-        </div>
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
 
-        <!-- Card for the Pagani Imola -->
-        <div class="car-card">
-            <img src="images/2021-Pagani-Imola-004-2160.jpg" alt="2021 Pagani Imola">
-            <h2>2021 Pagani Imola</h2>
-            <p>
-                The Pagani Imola is a limited-edition hypercar focused on track performance, with advanced aerodynamics and a powerful V12 engine.<br>
-                <strong>Horsepower:</strong> 827 hp<br>
-                <strong>Top Speed:</strong> ~233-240 mph (375-386 km/h)
-            </p>
-        </div>
-
-        <!-- Card for the Ferrari SF90 XX Stradale -->
-        <div class="car-card">
-            <img src="images/ferrari sf90.jpg" alt="Ferrari SF90 XX Stradale">
-            <h2>Ferrari SF90 XX Stradale</h2>
-            <p>
-                The Ferrari SF90 XX Stradale is a limited-series, track-focused hybrid supercar with advanced aerodynamics and electrified V8 power.<br>
-                <strong>Horsepower:</strong> 1,030 hp (hybrid system)<br>
-                <strong>Top Speed:</strong> 211 mph (340 km/h)
-            </p>
-        </div>
         
-        <!-- Card for the 2018 Aston Martin Vulcan AMR Pro -->
-        <div class="car-card">
-            <img src="images/2018-Aston-Martin-Vulcan-AMR-Pro-006-2000.jpg" alt="2018 Aston Martin Vulcan AMR Pro">
-            <h2>2018 Aston Martin Vulcan AMR Pro</h2>
-            <p>
-                A track-only supercar with extreme aerodynamics and performance.<br>
-                <strong>Horsepower:</strong> 820 hp<br>
-                <strong>Top Speed:</strong> 208 mph (335 km/h)
-            </p>
-        </div>
+        // --- Filtering Logic ---
+        const filterLinks = document.querySelectorAll('.nav-link');
+        const allCards = document.querySelectorAll('.car-card');
 
-        <!-- Card for the 2022 GMC Hummer EV -->
-        <div class="car-card">
-            <img src="images/2022-GMC-Hummer-EV-007-1440w.jpg" alt="2022 GMC Hummer EV">
-            <h2>2022 GMC Hummer EV</h2>
-            <p>
-                An all-electric supertruck with impressive off-road and on-road capabilities.<br>
-                <strong>Horsepower:</strong> Up to 1,000 hp<br>
-                <strong>Top Speed:</strong> 106 mph (170 km/h)
-            </p>
-        </div>
+        filterLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class
+                filterLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
 
-        <!-- Card for the 2025 Land Rover Defender Octa -->
-        <div class="car-card">
-            <img src="images/2025-Land-Rover-Defender-Octa-003-1440w.jpg" alt="2025 Land Rover Defender Octa">
-            <h2>2025 Land Rover Defender Octa</h2>
-            <p>
-                The next-generation Defender with advanced off-road technology.<br>
-                <strong>Horsepower:</strong> 626 hp<br>
-                <strong>Top Speed:</strong> 155 mph (250 km/h)
-            </p>
-        </div>
+                const filter = link.getAttribute('data-filter');
 
-        <!-- Card for the 2025 Mercedes-AMG GT63 S E Performance 4-Door -->
-        <div class="car-card">
-            <img src="images/2025-Mercedes-AMG-GT63-S-E-Performance-4-Door-001-1440w.jpg" alt="2025 Mercedes-AMG GT63 S E Performance 4-Door">
-            <h2>2025 Mercedes-AMG GT63 S E Performance 4-Door</h2>
-            <p>
-                A high-performance hybrid luxury sedan with AMG engineering.<br>
-                <strong>Horsepower:</strong> 805 hp (combined)<br>
-                <strong>Top Speed:</strong> 199 mph (320 km/h)
-            </p>
-        </div>
+                allCards.forEach(card => {
+                    // Reset animations
+                    card.style.transition = 'all 0.4s ease, opacity 0.4s ease';
+                    
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(50px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 400); // match transition duration
+                    }
+                });
+            });
+        });
 
-        <!-- Card for the 2025 Ford Mustang GTD Spirit of America -->
-        <div class="car-card">
-            <img src="images/2025-Ford-Mustang-GTD-Spirit-of-America-003-2160.jpg" alt="2025 Ford Mustang GTD Spirit of America">
-            <h2>2025 Ford Mustang GTD Spirit of America</h2>
-            <p>
-                A special edition Mustang with track-focused performance.<br>
-                <strong>Horsepower:</strong> 815 hp<br>
-                <strong>Top Speed:</strong> 202 mph (325 km/h)
-            </p>
-        </div>
+        // --- Text Pressure Effect ---
+        const nameElement = document.getElementById('hero-name');
+        if(nameElement) {
+            const text = nameElement.textContent;
+            nameElement.innerHTML = '';
+            // Don't want the glitch text-shadow to mess with individual spans, so we handle that in CSS
+            nameElement.removeAttribute('data-text'); 
+            
+            text.split('').forEach(char => {
+                if (char === ' ') {
+                    nameElement.appendChild(document.createTextNode(' '));
+                } else {
+                    const span = document.createElement('span');
+                    span.textContent = char;
+                    span.classList.add('pressure-char');
+                    nameElement.appendChild(span);
+                }
+            });
 
-        <!-- Card for the 2023 Cadillac Escalade V -->
-        <div class="car-card">
-            <img src="images/2023-Cadillac-Escalade-V-002-2160.jpg" alt="2023 Cadillac Escalade V">
-            <h2>2023 Cadillac Escalade V</h2>
-            <p>
-                A luxury SUV with supercharged V8 power and premium features.<br>
-                <strong>Horsepower:</strong> 682 hp<br>
-                <strong>Top Speed:</strong> 125 mph (201 km/h)
-            </p>
-        </div>
+            const pressureChars = document.querySelectorAll('.pressure-char');
+            
+            window.addEventListener('mousemove', (e) => {
+                pressureChars.forEach(char => {
+                    const rect = char.getBoundingClientRect();
+                    const charCenterX = rect.left + rect.width / 2;
+                    const charCenterY = rect.top + rect.height / 2;
+                    
+                    const distX = e.clientX - charCenterX;
+                    const distY = e.clientY - charCenterY;
+                    const distance = Math.sqrt(distX * distX + distY * distY);
+                    
+                    // Max distance to feel the "pressure"
+                    const maxDist = 250;
+                    
+                    if (distance < maxDist) {
+                        // Closer = thinner/pushed away
+                        const factor = 1 - (distance / maxDist);
+                        const weight = 700 - (factor * 400); // from 700 down to 300
+                        char.style.fontVariationSettings = `"wght" ${weight}`;
+                        char.style.color = `rgba(255, 255, 255, ${1 - (factor * 0.3)})`; // slight fade
+                        char.style.transform = `translateY(${factor * -10}px)`; // slight push up
+                    } else {
+                        char.style.fontVariationSettings = `"wght" 700`;
+                        char.style.color = '#fff';
+                        char.style.transform = `translateY(0px)`;
+                    }
+                });
+            });
+            
+            // reset when mouse leaves
+            window.addEventListener('mouseleave', () => {
+                pressureChars.forEach(char => {
+                    char.style.fontVariationSettings = `"wght" 700`;
+                    char.style.color = '#fff';
+                    char.style.transform = `translateY(0px)`;
+                });
+            });
+        }
 
-        <!-- Card for the 2022 Rolls-Royce Ghost Black Badge -->
-        <div class="car-card">
-            <img src="images/2022-Rolls-Royce-Ghost-Black-Badge-002-2160.jpg" alt="2022 Rolls-Royce Ghost Black Badge">
-            <h2>2022 Rolls-Royce Ghost Black Badge</h2>
-            <p>
-                The Black Badge edition of the Ghost, offering extra power and bespoke luxury.<br>
-                <strong>Horsepower:</strong> 592 hp<br>
-                <strong>Top Speed:</strong> 155 mph (250 km/h)
-            </p>
-        </div>
+        // Hover effects for links and cards to grow cursor
+        const hoverElements = document.querySelectorAll('a, .car-card');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursorOutline.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => cursorOutline.classList.remove('cursor-hover'));
+        });
 
-        <!-- Card for the 2025 Maserati GT2 Stradale -->
-        <div class="car-card">
-            <img src="images/2025-Maserati-GT2-Stradale-004-1440w.jpg" alt="2025 Maserati GT2 Stradale">
-            <h2>2025 Maserati GT2 Stradale</h2>
-            <p>
-                Maserati's latest GT2 race car for the road.<br>
-                <strong>Horsepower:</strong> 631 hp<br>
-                <strong>Top Speed:</strong> 201 mph (323 km/h)
-            </p>
-        </div>
+        // 3D Tilt Effect
+        const cards = document.querySelectorAll(".car-card");
         
-    </div> <!-- End of garage-grid -->
+        cards.forEach(card => {
+            card.addEventListener("mousemove", handleTilt);
+            card.addEventListener("mouseleave", resetTilt);
+        });
 
+        function handleTilt(e) {
+            const card = this;
+            const cardRect = card.getBoundingClientRect();
+            const centerX = cardRect.left + cardRect.width / 2;
+            const centerY = cardRect.top + cardRect.height / 2;
+            const mouseX = e.clientX - centerX;
+            const mouseY = e.clientY - centerY;
+            
+            const rotateX = (mouseY / (cardRect.height / 2)) * -8;
+            const rotateY = (mouseX / (cardRect.width / 2)) * 8;
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        }
+
+        function resetTilt() {
+            this.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        }
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
