@@ -71,7 +71,19 @@ export default function GarageGrid({ activeFilter }: GarageGridProps) {
   return (
     <div
       ref={gridRef}
-      className="grid grid-cols-[repeat(auto-fill,minmax(340px,1fr))] gap-10 max-w-[1400px] mx-auto"
+      /*
+       * minmax(min(100%, 340px), 1fr)
+       * The `min(100%, 340px)` CSS function prevents overflow on narrow screens.
+       * Without it, `340px` is an absolute minimum — on a 390px phone with 40px
+       * of horizontal padding, only 350px is available, which barely fits and
+       * causes horizontal scroll on anything smaller (e.g. 375px iPhone SE).
+       * `min(100%, 340px)` says "use at most 340px, but never more than 100%
+       * of the available space" — so on mobile it becomes 1 column perfectly.
+       *
+       * gap-6 on mobile (24px), md:gap-10 on desktop (40px) — less wasted
+       * vertical space between cards when the screen is tight.
+       */
+      className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,340px),1fr))] gap-6 md:gap-10 max-w-[1400px] mx-auto"
     >
       {visibleCars.map((car, index) => (
         <CarCard key={`${car.name}-${index}`} car={car} />

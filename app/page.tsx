@@ -11,11 +11,11 @@
  *     ├── Preloader      (client — useState + setTimeout)
  *     ├── AmbientScene   (server — purely decorative static divs)
  *     ├── CustomCursor   (client — tracks mouse position)
+ *     ├── Hero           (client — variable-font text pressure)
  *     ├── GarageSection  (client — owns filter state)
  *     │     ├── Nav          (client — filter buttons)
  *     │     └── GarageGrid   (client — IntersectionObserver)
  *     │           └── CarCard (client — 3D tilt on hover)
- *     ├── Hero           (client — variable-font text pressure)
  *     └── Footer         (server — static HTML, zero JS)
  */
 
@@ -99,8 +99,8 @@ export default function HomePage() {
       <Preloader />
       <AmbientScene />
       <CustomCursor />
-      <GarageSection />
       <Hero />
+      <GarageSection />
       <Footer />
     </>
   )

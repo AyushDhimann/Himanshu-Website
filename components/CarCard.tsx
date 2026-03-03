@@ -2,23 +2,9 @@
  * CarCard — components/CarCard.tsx
  *
  * Glassmorphism card for a single car with 3D tilt on hover.
+ * Fully responsive — adapts padding, stat layout, and image height to screen size.
  *
  * CLIENT COMPONENT — mouse event handlers + useRef for tilt.
- *
- * TYPESCRIPT CHANGES:
- *   CarCardProps
- *     Types the `car` prop using our Car interface from types/.
- *     TypeScript will error if you pass anything that doesn't match Car.
- *
- *   StatValueProps & StatBoxProps
- *     Small internal component props — typed inline.
- *
- *   React.MouseEvent<HTMLDivElement>
- *     Click/move/leave events on a <div>. The generic parameter
- *     HTMLDivElement makes e.currentTarget typed correctly.
- *
- *   useRef<HTMLDivElement>(null)
- *     Typed ref pointing at the card's root div element.
  */
 'use client'
 
@@ -37,13 +23,18 @@ function StatValue({ value }: StatValueProps) {
 
   if (normalised === 'infinity' || normalised === '∞') {
     return (
-      <span className="font-display font-semibold text-base text-white whitespace-nowrap">
+      <span className="font-display font-semibold text-sm sm:text-base text-white">
         <i className="fa-solid fa-infinity rainbow-icon" aria-label="Infinity" />
       </span>
     )
   }
   return (
-    <span className="font-display font-semibold text-base text-white whitespace-nowrap">
+    /*
+     * No whitespace-nowrap here — long values like "193 mph / 310 km/h"
+     * need to wrap on narrow cards rather than overflow the container.
+     * leading-tight keeps wrapped lines compact.
+     */
+    <span className="font-display font-semibold text-sm sm:text-base text-white leading-tight">
       {String(value ?? '')}
     </span>
   )
@@ -60,10 +51,16 @@ interface StatBoxProps {
 
 function StatBox({ iconClass, label, value }: StatBoxProps) {
   return (
-    <div className="flex-1 flex items-center gap-3 bg-white/[0.03] border border-white/[0.05] px-[15px] py-3 rounded-2xl transition-colors duration-300 hover:bg-white/[0.08] hover:border-white/[0.15]">
-      <i className={`${iconClass} text-xl text-accent`} />
-      <div className="flex flex-col">
-        <span className="text-[0.7rem] uppercase text-text-muted tracking-wider">{label}</span>
+    /*
+     * min-w-0 is crucial here.
+     * Without it, a flex child ignores its parent's width constraint and
+     * can overflow the container. min-w-0 sets the implicit minimum width
+     * to 0 so the box can actually shrink when needed.
+     */
+    <div className="flex-1 min-w-0 flex items-center gap-2 sm:gap-3 bg-white/[0.03] border border-white/[0.05] px-3 sm:px-[15px] py-2.5 sm:py-3 rounded-2xl transition-colors duration-300 hover:bg-white/[0.08] hover:border-white/[0.15]">
+      <i className={`${iconClass} text-base sm:text-xl text-accent flex-shrink-0`} />
+      <div className="flex flex-col min-w-0">
+        <span className="text-[0.65rem] sm:text-[0.7rem] uppercase text-text-muted tracking-wider">{label}</span>
         <StatValue value={value} />
       </div>
     </div>
@@ -107,8 +104,13 @@ export default function CarCard({ car }: CarCardProps) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Image */}
-      <div className="relative w-full h-[250px] overflow-hidden">
+      {/* ── Image ─────────────────────────────────────────────── */}
+      {/*
+       * h-[200px] on mobile, h-[250px] on sm+ (640px+).
+       * Shorter image on mobile saves vertical space so you can see
+       * more of the card text without scrolling.
+       */}
+      <div className="relative w-full h-[200px] sm:h-[250px] overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={car.image}
@@ -122,10 +124,14 @@ export default function CarCard({ car }: CarCardProps) {
         />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 p-[30px]">
+      {/* ── Content ───────────────────────────────────────────── */}
+      {/*
+       * p-5 (20px) on mobile, p-[30px] on sm+ — more breathing room
+       * on larger screens without squishing content on phones.
+       */}
+      <div className="relative z-10 p-5 sm:p-[30px]">
         <h2
-          className="font-display text-[1.6rem] font-bold mb-3"
+          className="font-display text-[1.3rem] sm:text-[1.6rem] font-bold mb-2.5 sm:mb-3 leading-tight"
           style={{
             background: 'linear-gradient(90deg, #fff, #aaa)',
             WebkitBackgroundClip: 'text',
@@ -134,10 +140,21 @@ export default function CarCard({ car }: CarCardProps) {
         >
           {car.name}
         </h2>
-        <p className="text-[0.95rem] text-text-muted leading-relaxed mb-[25px] font-light">
+
+        <p className="text-[0.9rem] sm:text-[0.95rem] text-text-muted leading-relaxed mb-5 sm:mb-[25px] font-light">
           {car.description}
         </p>
-        <div className="flex gap-[15px]">
+
+        {/*
+         * Stats layout:
+         *   < 480px — stack vertically (column) — wide values don't overflow
+         *   ≥ 480px — side by side (row) — two columns look better when there's space
+         *
+         * min-[480px]: is a Tailwind v4 arbitrary min-width breakpoint.
+         * It's not tied to a screen size (like sm = 640px) but to an exact pixel value,
+         * which is useful here because cards have a fixed minimum width.
+         */}
+        <div className="flex flex-col gap-3 min-[480px]:flex-row min-[480px]:gap-[15px]">
           <StatBox iconClass="fa-solid fa-gauge-high" label="Horsepower" value={car.specs?.horsepower} />
           <StatBox iconClass="fa-solid fa-bolt"       label="Top Speed"  value={car.specs?.topSpeed}   />
         </div>

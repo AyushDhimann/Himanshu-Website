@@ -8,7 +8,7 @@
  * SERVER COMPONENT — runs on the server, ships zero JavaScript of its own.
  */
 
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Outfit, Space_Grotesk } from 'next/font/google'
 import { Analytics }     from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -137,6 +137,26 @@ export const metadata: Metadata = {
       url:  'https://himanshudhiman.website',
     },
   ],
+}
+
+/* ----------------------------------------------------------------
+ * VIEWPORT
+ *
+ * This is THE most important thing for mobile responsiveness.
+ * Without it, mobile browsers assume the page is designed for
+ * a 980px-wide desktop and just zoom it out — making it look tiny
+ * and unresponsive. All the Tailwind responsive classes (sm:, md:)
+ * would be completely ignored.
+ *
+ * width=device-width  — use the actual screen width as the viewport
+ * initialScale=1      — don't zoom in or out on first load
+ *
+ * In Next.js App Router, this is a separate named export, NOT part
+ * of the metadata object (that would be deprecated/ignored).
+ * ---------------------------------------------------------------- */
+export const viewport: Viewport = {
+  width:        'device-width',
+  initialScale: 1,
 }
 
 /* ----------------------------------------------------------------
