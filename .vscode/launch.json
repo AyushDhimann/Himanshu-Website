@@ -1,15 +1,37 @@
 {
+  /*
+   * VS Code Launch Configuration — .vscode/launch.json
+   *
+   * This file powers the green PLAY BUTTON (▶) in the Run & Debug panel
+   * (Ctrl+Shift+D, or click the bug icon on the left sidebar).
+   *
+   * When you press ▶ "Launch Ultimate Garage":
+   *   1. preLaunchTask runs "Start Next.js Dev Server" (from tasks.json)
+   *      — this starts `npm run dev` in a terminal
+   *   2. VS Code waits for the problemMatcher in that task to signal "ready"
+   *   3. Then it opens http://localhost:6217 in Microsoft Edge
+   *
+   * You can also just press F5 — that's the keyboard shortcut for "Start Debugging".
+   *
+   * NOTE: If you prefer Chrome, change "msedge" to "chrome".
+   * If you don't want a browser to open automatically (you'll open it yourself),
+   * delete the "url" and "preLaunchTask" lines.
+   */
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Open index.html in Browser",
-      "type": "pwa-msedge",
+      "name": "▶ Launch Ultimate Garage",
+      "type": "msedge",
       "request": "launch",
-      "file": "${workspaceFolder}/index.html"
+      "url": "http://localhost:6217",
+      "webRoot": "${workspaceFolder}",
+
+      /*
+       * preLaunchTask must exactly match the "label" in tasks.json.
+       * VS Code runs this task first and waits for it to signal ready
+       * before opening the browser.
+       */
+      "preLaunchTask": "Start Next.js Dev Server"
     }
   ]
 }
-
-
-
-

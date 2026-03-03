@@ -1,0 +1,32 @@
+# ── Next.js ──────────────────────────────────────────────────────
+# The .next/ folder is Next.js's build output and dev cache.
+# It MUST NOT be committed — it's large, machine-specific, and
+# (as just discovered) Turbopack's cache can contain tokens from
+# your environment. Vercel rebuilds this on every deployment anyway.
+.next/
+out/
+
+# ── Dependencies ─────────────────────────────────────────────────
+# npm install recreates this from package.json — never commit it.
+node_modules/
+
+# ── IDE / Editor ─────────────────────────────────────────────────
+.idea/
+.vscode/settings.json
+
+# ── Environment Variables ─────────────────────────────────────────
+# NEVER commit .env files — they contain secrets (API keys, tokens).
+# Add them as Environment Variables in Vercel's dashboard instead.
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ── OS clutter ───────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Logs ─────────────────────────────────────────────────────────
+*.log
+npm-debug.log*

@@ -1,0 +1,340 @@
+/*
+ * =======================================================
+ *  ULTIMATE GARAGE — Global Stylesheet
+ * =======================================================
+ *
+ * This file has two distinct jobs:
+ *
+ *  1. IMPORT TAILWIND CSS
+ *     A single @import line gives us hundreds of utility classes
+ *     like flex, p-4, text-white, rounded-full, etc.
+ *
+ *  2. WRITE CUSTOM CSS
+ *     Things Tailwind can't do on its own — complex keyframe
+ *     animations, ::before/::after pseudo-elements, custom cursors,
+ *     and the glassmorphism card effects.
+ *
+ * Rule of thumb: if you can express it in 1–2 Tailwind classes, use
+ * Tailwind. If it needs @keyframes, pseudo-elements, or a lot of
+ * custom values, write it here.
+ * =======================================================
+ */
+
+/* -------------------------------------------------------
+ * 1. TAILWIND CSS v4 IMPORT
+ *
+ * This single line replaces the three directives from Tailwind v3:
+ *   @tailwind base;
+ *   @tailwind components;
+ *   @tailwind utilities;
+ *
+ * It injects Tailwind's base resets, all utility classes, and
+ * anything you define in the @theme block below.
+ * ------------------------------------------------------- */
+@import 'tailwindcss';
+
+/* -------------------------------------------------------
+ * 2. TAILWIND v4 THEME — Design Tokens
+ *
+ * This is the NEW way to configure Tailwind (v4 only!).
+ * In v3 you needed a tailwind.config.js file.
+ * Now you define your design system right here in CSS.
+ *
+ * Every variable you put here becomes a Tailwind utility class:
+ *   --color-accent   →  bg-accent, text-accent, border-accent
+ *   --font-sans      →  font-sans  (used on body text)
+ *   --font-display   →  font-display  (used on headings)
+ *
+ * The font variables reference CSS variables that next/font
+ * creates and injects onto the <html> element in layout.js.
+ * ------------------------------------------------------- */
+@theme {
+  /* Brand color — the hot pink/red used for highlights, buttons, and glow */
+  --color-accent: #ff3366;
+
+  /* Almost-black site background */
+  --color-site-bg: #050505;
+
+  /* Muted grey for secondary text (descriptions, labels) */
+  --color-text-muted: #a0a0a0;
+
+  /*
+   * Font families
+   * These point to CSS variables that next/font creates in layout.js.
+   * Using next/font means the fonts are self-hosted — no external request
+   * to Google's servers, which is faster and better for privacy.
+   */
+  --font-sans: var(--font-outfit);        /* Outfit — body text */
+  --font-display: var(--font-space-grotesk); /* Space Grotesk — headings & logo */
+}
+
+/* -------------------------------------------------------
+ * 3. CSS CUSTOM PROPERTIES (Variables)
+ *
+ * These are traditional CSS variables defined on :root (the <html> element).
+ * Unlike @theme variables above, these are NOT turned into Tailwind classes —
+ * they're just reusable values for our custom CSS below.
+ * ------------------------------------------------------- */
+:root {
+  --accent-glow: rgba(255, 51, 102, 0.4);         /* Semi-transparent pink for glows */
+  --card-bg: rgba(20, 20, 20, 0.6);               /* Frosted-glass card background */
+  --card-border: rgba(255, 255, 255, 0.08);       /* Very subtle white border */
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Drop shadow under glass cards */
+}
+
+/* -------------------------------------------------------
+ * 4. BASE LAYER
+ *
+ * @layer base is Tailwind's lowest priority layer.
+ * Put global resets and default element styles here.
+ * Tailwind's utility classes will always win over these.
+ * ------------------------------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* 
+     * Hide the OS cursor site-wide — our JavaScript draws a custom one.
+     * On mobile (no mouse) this has no effect.
+     */
+    cursor: none;
+  }
+
+  body {
+    background-color: var(--color-site-bg);
+    color: white;
+    overflow-x: hidden; /* Prevent horizontal scroll from off-screen orbs */
+    min-height: 100vh;
+  }
+
+  /* Restore normal cursor on touch/mobile devices where custom cursor is hidden */
+  @media (max-width: 768px) {
+    html {
+      cursor: auto;
+    }
+  }
+}
+
+/* -------------------------------------------------------
+ * 5. PRELOADER ANIMATION
+ *
+ * The loading bar that fills from 0% to 100% in 3.5 seconds.
+ * cubic-bezier(0.8, 0, 0.2, 1) is an easing curve that starts
+ * slow, then rushes to the end — feels satisfying to watch.
+ * ------------------------------------------------------- */
+@keyframes preloader-load {
+  0%   { width: 0%; }
+  30%  { width: 40%; }   /* Slow start */
+  70%  { width: 70%; }   /* Steady middle */
+  100% { width: 100%; }  /* Quick finish */
+}
+
+/* The "HIMANSHU" text pulses in brightness while the bar fills */
+@keyframes preloader-pulse {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; text-shadow: 0 0 30px rgba(255, 255, 255, 0.5); }
+}
+
+.preloader-bar-fill {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: var(--color-accent);
+  box-shadow: 0 0 10px var(--accent-glow);
+  animation: preloader-load 3.5s cubic-bezier(0.8, 0, 0.2, 1) forwards;
+}
+
+.preloader-logo-text {
+  animation: preloader-pulse 1.5s ease-in-out infinite;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* -------------------------------------------------------
+ * 6. AMBIENT BACKGROUND
+ *
+ * Three visual layers stacked behind everything:
+ *   a) A dark radial gradient base
+ *   b) An animated perspective grid (::after) — the "racing grid" floor
+ *   c) Animated dot particles (::before) — subtle depth
+ *
+ * Pseudo-elements (::before / ::after) are extra boxes you can
+ * attach to any element without adding HTML. They need `content: ''`
+ * to be rendered.
+ * ------------------------------------------------------- */
+
+/* Animated grid — the red/pink grid lines receding into the distance */
+@keyframes grid-move {
+  0%   { transform: perspective(500px) rotateX(60deg) translateY(0); }
+  100% { transform: perspective(500px) rotateX(60deg) translateY(50px); }
+}
+
+/* Subtle dot particles drifting diagonally */
+@keyframes particles-move {
+  0%   { background-position: 0 0; }
+  100% { background-position: 400px 400px; }
+}
+
+/* The orbs bob and breathe using this float animation */
+@keyframes orb-float {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(50px, -50px) scale(1.1); }
+  66%  { transform: translate(-30px, 50px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+.ambient-background::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  /* Two layered linear-gradients make the grid lines */
+  background-image:
+    linear-gradient(rgba(255, 51, 102, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 51, 102, 0.07) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform: perspective(500px) rotateX(60deg) translateY(0);
+  animation: grid-move 15s linear infinite;
+  z-index: 1;
+  pointer-events: none; /* Clicks pass through this layer */
+}
+
+.ambient-background::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: particles-move 20s linear infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* -------------------------------------------------------
+ * 7. HERO — TEXT PRESSURE EFFECT
+ *
+ * Each character in "HIMANSHU'S COLLECTION" becomes a <span>.
+ * JavaScript (Hero.jsx) animates font-variation-settings on each
+ * span based on mouse proximity — letters get lighter when the
+ * cursor is nearby, creating a "pressure" effect.
+ *
+ * This transition is what makes the effect buttery-smooth.
+ * ------------------------------------------------------- */
+.pressure-char {
+  display: inline-block;
+  transition:
+    font-variation-settings 0.1s ease-out,
+    color 0.1s ease-out,
+    transform 0.1s ease-out;
+}
+
+/* Scroll indicator arrows bounce up and down */
+@keyframes scroll-bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-15px); }
+  60% { transform: translateY(-7px); }
+}
+
+.scroll-bounce {
+  animation: scroll-bounce 2s infinite;
+}
+
+/* -------------------------------------------------------
+ * 8. CAR CARDS
+ *
+ * The cards use "glassmorphism" — a frosted-glass effect made with:
+ *   - Semi-transparent background (--card-bg)
+ *   - backdrop-filter: blur() — blurs whatever is behind the element
+ *   - A very subtle white border
+ *
+ * Cards start invisible (opacity: 0, moved down 50px).
+ * When the IntersectionObserver in GarageGrid.jsx fires,
+ * it adds the .visible class, which transitions them into view.
+ * ------------------------------------------------------- */
+.car-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 1.5rem;    /* 24px */
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px); /* Safari needs the -webkit- prefix */
+  box-shadow: var(--glass-shadow);
+  /* preserve-3d lets the tilt JS effect look 3-dimensional */
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Hidden state — cards are invisible and shifted down on first render */
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* Visible state — added by IntersectionObserver when card scrolls into view */
+.car-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.car-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 20px var(--accent-glow);
+}
+
+/* Image zooms in on card hover — the overflow:hidden on .car-card clips it */
+.car-card:hover .card-image-wrapper img {
+  transform: scale(1.1);
+}
+
+/* -------------------------------------------------------
+ * 9. RAINBOW INFINITY ICON
+ *
+ * The Eeco car has "infinity" horsepower — so we show an
+ * animated rainbow ∞ symbol instead of a number.
+ *
+ * background-clip: text clips the gradient to the text shape,
+ * then we make the actual text transparent so only the gradient shows.
+ * background-size: 200% lets us animate the gradient's position
+ * (background-position) to create the scrolling rainbow.
+ * ------------------------------------------------------- */
+@keyframes rainbow-scroll {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.rainbow-icon {
+  background: linear-gradient(
+    to right,
+    #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  animation: rainbow-scroll 5s linear infinite;
+}
+
+/* -------------------------------------------------------
+ * 10. RESPONSIVE TWEAKS
+ *
+ * Tailwind handles most responsive layout via classes like md:grid-cols-2.
+ * But a few things are easier to handle here because they affect
+ * deeply-nested elements or third-party HTML structures.
+ * ------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Hide custom cursor on mobile/tablet — there's no mouse pointer */
+  .cursor-dot,
+  .cursor-outline {
+    display: none;
+  }
+
+  /* Keep the nav scrollable but hide the scrollbar (it looks ugly) */
+  .main-nav {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+}

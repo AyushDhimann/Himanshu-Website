@@ -1,21 +1,58 @@
 {
+  /*
+   * VS Code Tasks — .vscode/tasks.json
+   *
+   * Tasks let you run shell commands from inside VS Code without
+   * opening a terminal manually. They're triggered by launch.json
+   * (via preLaunchTask) or from the Command Palette (Ctrl+Shift+P → Run Task).
+   *
+   * This task starts the Next.js development server on port 6217.
+   * It's marked as `isBackground: true` because the server keeps running
+   * indefinitely — VS Code needs to know it shouldn't wait for it to finish.
+   *
+   * The problemMatcher tells VS Code WHEN the background task is "ready"
+   * so the browser launch (in launch.json) doesn't fire too early.
+   */
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Open index.html in default browser",
+      "label": "Start Next.js Dev Server",
       "type": "shell",
-      "command": "cmd",
-      "args": [
-        "/c",
-        "start",
-        "",
-        "${workspaceFolder}\\index.html"
-      ],
-      "problemMatcher": []
+      "command": "npm run dev",
+
+      /*
+       * isBackground: true — the task runs forever (it's a server).
+       * VS Code won't block waiting for it to finish.
+       */
+      "isBackground": true,
+
+      /*
+       * problemMatcher — VS Code reads the terminal output and uses these
+       * regex patterns to know when the server is "ready".
+       * beginsPattern: something that appears when the server starts
+       * endsPattern:   something that appears when it's fully ready
+       * This prevents the browser from opening before the server is up.
+       */
+      "problemMatcher": {
+        "owner": "nextjs",
+        "pattern": { "regexp": "^$" },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Starting|Compiling",
+          "endsPattern": "Ready in|ready on|localhost:6217"
+        }
+      },
+
+      /* Make this the default build task (Ctrl+Shift+B) */
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+
+      "presentation": {
+        "reveal": "always",   /* Always show the terminal when this task runs */
+        "panel": "dedicated"  /* Use a dedicated terminal panel for this task */
+      }
     }
   ]
 }
-
-
-
-

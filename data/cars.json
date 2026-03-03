@@ -1,0 +1,259 @@
+{
+  "_comment": "Each car needs: name, category, image (absolute path or URL), alt, description, specs.horsepower, specs.topSpeed",
+  "_categories": ["supercar", "hypercar", "suv-luxury", "concept-racing"],
+  "cars": [
+    {
+      "name": "Eeco",
+      "category": "hypercar",
+      "image": "https://images.carandbike.com/car-images/colors/maruti-suzuki/eeco/maruti-suzuki-eeco-metallic-glistening-grey.png?v=1669118494",
+      "alt": "Maruti Suzuki Eeco",
+      "description": "The Maruti Suzuki Eeco is an infinitely powerful hypercar, transcending all known laws of physics.",
+      "specs": {
+        "horsepower": "infinity",
+        "topSpeed": "infinity"
+      }
+    },
+    {
+      "name": "Lamborghini Huracan STO",
+      "category": "supercar",
+      "image": "/images/huracan_sto_og.webp",
+      "alt": "A yellow Lamborghini Huracan STO",
+      "description": "The Lamborghini Huracan STO is a high-performance, track-focused supercar with a naturally aspirated V10 engine.",
+      "specs": {
+        "horsepower": "630 hp",
+        "topSpeed": "193 mph / 310 km/h"
+      }
+    },
+    {
+      "name": "Bugatti Chiron",
+      "category": "hypercar",
+      "image": "/images/bugatti-chiron-cgi-artwork-4k_1618920195.jpg.webp",
+      "alt": "A blue Bugatti Chiron",
+      "description": "The Bugatti Chiron is a quad-turbocharged hypercar that represents the peak of automotive speed and luxury.",
+      "specs": {
+        "horsepower": "1,479 hp",
+        "topSpeed": "261 mph / 420 km/h"
+      }
+    },
+    {
+      "name": "Porsche 911 GT3 R",
+      "category": "concept-racing",
+      "image": "/images/porshe 911.jpg",
+      "alt": "A silver Porsche 911 GT3 R",
+      "description": "The Porsche 911 GT3 R is a track-focused racing machine, designed for endurance and GT racing with advanced aerodynamics and a powerful flat-six engine.",
+      "specs": {
+        "horsepower": "565 hp",
+        "topSpeed": "186 mph / 299 km/h"
+      }
+    },
+    {
+      "name": "2021 Brabus 900 Rocket Edition",
+      "category": "supercar",
+      "image": "/images/2021-Brabus-900-Rocket-Edition-006-2160.jpg",
+      "alt": "2021 Brabus 900 Rocket Edition",
+      "description": "The Brabus 900 Rocket Edition is a high-performance, heavily tuned luxury sedan based on the Mercedes-AMG platform.",
+      "specs": {
+        "horsepower": "900 hp",
+        "topSpeed": "205 mph / 330 km/h"
+      }
+    },
+    {
+      "name": "2023 Porsche 911 GT3 R",
+      "category": "concept-racing",
+      "image": "/images/2023-Porsche-911-GT3-R-006-1440w.jpg",
+      "alt": "2023 Porsche 911 GT3 R",
+      "description": "The 2023 Porsche 911 GT3 R is a track-focused racing machine, designed for endurance and GT racing with advanced aerodynamics and a powerful flat-six engine.",
+      "specs": {
+        "horsepower": "565 hp",
+        "topSpeed": "186 mph / 299 km/h"
+      }
+    },
+    {
+      "name": "2024 Bugatti Chiron Super Sport L'Ultime",
+      "category": "hypercar",
+      "image": "/images/2024-Bugatti-Chiron-Super-Sport-L-Ultime-005-2160.jpg",
+      "alt": "2024 Bugatti Chiron Super Sport L'Ultime",
+      "description": "The Chiron Super Sport L'Ultime is a special edition of the Bugatti Chiron, representing the pinnacle of luxury and speed in the Chiron lineup.",
+      "specs": {
+        "horsepower": "1,578 hp",
+        "topSpeed": "273 mph / 440 km/h"
+      }
+    },
+    {
+      "name": "2025 Ferrari 499P",
+      "category": "concept-racing",
+      "image": "/images/2025-Ferrari-499P-001-1440w.jpg",
+      "alt": "2025 Ferrari 499P",
+      "description": "The Ferrari 499P is a cutting-edge Le Mans Hypercar, marking Ferrari's return to top-level endurance racing with hybrid technology.",
+      "specs": {
+        "horsepower": "680 hp (hybrid system)",
+        "topSpeed": "211 mph / 340 km/h"
+      }
+    },
+    {
+      "name": "2023 Audi R8 Coupe V10 GT RWD",
+      "category": "supercar",
+      "image": "/images/2023-Audi-R8-Coupe-V10-GT-RWD-001-1440w.jpg",
+      "alt": "2023 Audi R8 Coupe V10 GT RWD",
+      "description": "The 2023 Audi R8 Coupe V10 GT RWD is a limited-edition, rear-wheel-drive supercar with a naturally aspirated V10 engine and sharp handling.",
+      "specs": {
+        "horsepower": "620 hp",
+        "topSpeed": "199 mph / 320 km/h"
+      }
+    },
+    {
+      "name": "2023 BMW M4 GT4",
+      "category": "concept-racing",
+      "image": "/images/2023-BMW-M4-GT4-001-1440w.jpg",
+      "alt": "2023 BMW M4 GT4",
+      "description": "The BMW M4 GT4 is a customer racing car designed for GT4 competition, blending BMW's motorsport heritage with modern technology.",
+      "specs": {
+        "horsepower": "Up to 550 hp",
+        "topSpeed": "170 mph / 274 km/h"
+      }
+    },
+    {
+      "name": "2026 Aston Martin Valkyrie LM",
+      "category": "hypercar",
+      "image": "/images/2026-Aston-Martin-Valkyrie-LM-004-1440w.jpg",
+      "alt": "2026 Aston Martin Valkyrie LM",
+      "description": "The Valkyrie LM is Aston Martin's hypercar engineered for Le Mans, featuring extreme aerodynamics and a high-revving V12 engine.",
+      "specs": {
+        "horsepower": "697 hp",
+        "topSpeed": "211 mph / 340 km/h"
+      }
+    },
+    {
+      "name": "2021 Pagani Imola",
+      "category": "hypercar",
+      "image": "/images/2021-Pagani-Imola-004-2160.jpg",
+      "alt": "2021 Pagani Imola",
+      "description": "The Pagani Imola is a limited-edition hypercar focused on track performance, with advanced aerodynamics and a powerful V12 engine.",
+      "specs": {
+        "horsepower": "827 hp",
+        "topSpeed": "238 mph / 383 km/h"
+      }
+    },
+    {
+      "name": "Ferrari SF90 XX Stradale",
+      "category": "hypercar",
+      "image": "/images/ferrari sf90.jpg",
+      "alt": "Ferrari SF90 XX Stradale",
+      "description": "The Ferrari SF90 XX Stradale is a limited-series, track-focused hybrid supercar with advanced aerodynamics and electrified V8 power.",
+      "specs": {
+        "horsepower": "1,030 hp (hybrid system)",
+        "topSpeed": "211 mph / 340 km/h"
+      }
+    },
+    {
+      "name": "2018 Aston Martin Vulcan AMR Pro",
+      "category": "hypercar",
+      "image": "/images/2018-Aston-Martin-Vulcan-AMR-Pro-006-2000.jpg",
+      "alt": "2018 Aston Martin Vulcan AMR Pro",
+      "description": "A track-only supercar with extreme aerodynamics and performance.",
+      "specs": {
+        "horsepower": "820 hp",
+        "topSpeed": "208 mph / 335 km/h"
+      }
+    },
+    {
+      "name": "2022 GMC Hummer EV",
+      "category": "suv-luxury",
+      "image": "/images/2022-GMC-Hummer-EV-007-1440w.jpg",
+      "alt": "2022 GMC Hummer EV",
+      "description": "An all-electric supertruck with impressive off-road and on-road capabilities.",
+      "specs": {
+        "horsepower": "Up to 1,000 hp",
+        "topSpeed": "106 mph / 170 km/h"
+      }
+    },
+    {
+      "name": "2025 Land Rover Defender Octa",
+      "category": "suv-luxury",
+      "image": "/images/2025-Land-Rover-Defender-Octa-003-1440w.jpg",
+      "alt": "2025 Land Rover Defender Octa",
+      "description": "The next-generation Defender with advanced off-road technology.",
+      "specs": {
+        "horsepower": "626 hp",
+        "topSpeed": "155 mph / 250 km/h"
+      }
+    },
+    {
+      "name": "2025 Mercedes-AMG GT63 S E Performance",
+      "category": "suv-luxury",
+      "image": "/images/2025-Mercedes-AMG-GT63-S-E-Performance-4-Door-001-1440w.jpg",
+      "alt": "2025 Mercedes-AMG GT63 S E Performance 4-Door",
+      "description": "A high-performance hybrid luxury sedan with AMG engineering.",
+      "specs": {
+        "horsepower": "805 hp (combined)",
+        "topSpeed": "199 mph / 320 km/h"
+      }
+    },
+    {
+      "name": "2025 Ford Mustang GTD Spirit of America",
+      "category": "supercar",
+      "image": "/images/2025-Ford-Mustang-GTD-Spirit-of-America-003-2160.jpg",
+      "alt": "2025 Ford Mustang GTD Spirit of America",
+      "description": "A special edition Mustang with track-focused performance.",
+      "specs": {
+        "horsepower": "815 hp",
+        "topSpeed": "202 mph / 325 km/h"
+      }
+    },
+    {
+      "name": "2023 Cadillac Escalade V",
+      "category": "suv-luxury",
+      "image": "/images/2023-Cadillac-Escalade-V-002-2160.jpg",
+      "alt": "2023 Cadillac Escalade V",
+      "description": "A luxury SUV with supercharged V8 power and premium features.",
+      "specs": {
+        "horsepower": "682 hp",
+        "topSpeed": "125 mph / 201 km/h"
+      }
+    },
+    {
+      "name": "2022 Rolls-Royce Ghost Black Badge",
+      "category": "suv-luxury",
+      "image": "/images/2022-Rolls-Royce-Ghost-Black-Badge-002-2160.jpg",
+      "alt": "2022 Rolls-Royce Ghost Black Badge",
+      "description": "The Black Badge edition of the Ghost, offering extra power and bespoke luxury.",
+      "specs": {
+        "horsepower": "592 hp",
+        "topSpeed": "155 mph / 250 km/h"
+      }
+    },
+    {
+      "name": "2025 Maserati GT2 Stradale",
+      "category": "supercar",
+      "image": "/images/2025-Maserati-GT2-Stradale-004-1440w.jpg",
+      "alt": "2025 Maserati GT2 Stradale",
+      "description": "Maserati's latest GT2 race car for the road.",
+      "specs": {
+        "horsepower": "631 hp",
+        "topSpeed": "201 mph / 323 km/h"
+      }
+    },
+    {
+      "name": "2025 Ferrari F76 Concept",
+      "category": "concept-racing",
+      "image": "https://www.wsupercars.com/wallpapers-regular/Ferrari/2025-Ferrari-F76-Concept-004-2160.jpg",
+      "alt": "2025 Ferrari F76 Concept",
+      "description": "The Ferrari F76 Concept is a futuristic supercar concept blending advanced aerodynamics, hybrid powertrain, and cutting-edge design.",
+      "specs": {
+        "horsepower": "1,000 hp (hybrid system)",
+        "topSpeed": "220 mph / 354 km/h"
+      }
+    },
+    {
+      "name": "2025 Red Bull Racing RB21",
+      "category": "concept-racing",
+      "image": "https://www.wsupercars.com/wallpapers-regular/Formula-1/Red-Bull-Racing/2025-Formula1-Red-Bull-Racing-RB21-010-2160.jpg",
+      "alt": "2025 Red Bull Racing RB21 Formula 1 car",
+      "description": "The RB21 is Red Bull Racing's 2025 Formula 1 contender, engineered for maximum performance in the world's premier motorsport series.",
+      "specs": {
+        "horsepower": "~1,040 hp",
+        "topSpeed": "223 mph / 360 km/h"
+      }
+    }
+  ]
+}
